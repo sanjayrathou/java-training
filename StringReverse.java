@@ -1,16 +1,15 @@
+import java.util.*;
 public class StringReverse {
     public static void main(String[] args) {
-        String a="sanjay", nste=" ";
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter the string:");
+        String str=sc.nextLine();
         char ch;
-        for(int i =0; i<a.length(); i++){
-            ch = a.charAt(i);
-            nste = ch+nste;
+        String rstr="";
+        for(int i=0;i<str.length();i++){
+            ch=str.charAt(i);
+            rstr=ch+rstr;
         }
-        System.out.println("Your reverse string  "  +nste);
-
-
-
-
-
+        System.out.println("reverse string is :"+rstr);
     }
 }
