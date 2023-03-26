@@ -12,16 +12,10 @@ public class PrefixSum2 {
         System.out.println();
     }
     static int[] prefix(int[] arr){
-        Scanner sc = new Scanner (System.in);
-        
-        int l = sc.nextInt();
-        int r = sc.nextInt();
         int n = arr.length;
-        for( int i = 1; i <= n; i++){
-            arr[i] = arr[i-1] + arr[i];
+        for( int i = 1; i < n; i++){
+            arr[i] =+ arr[i-1] ;
         }
-        int ans = arr[r] - arr[l-1];
-        System.out.println(ans);
         return arr;
     }
 
@@ -29,13 +23,22 @@ public class PrefixSum2 {
         Scanner sc = new Scanner (System.in);
         System.out.println("Enter the size of array :");
         int n = sc.nextInt();
-        int[] arr = new int[n];
+        int[] arr = new int[n+1];
         System.out.println("Enter the " + n + " elements :");
         for ( int i = 1; i <= n; i++){      //  NOTE 1 BASED INDEXING.
              arr[i] = sc.nextInt();
         }
-        System.out.println("Prefix array is :");
         int[] pref = prefix(arr);
-        printArray(pref);
+        System.out.println("Enter no of queries :");
+        int q = sc.nextInt();
+        while (q-- > 0){
+            System.out.println("Enter the range ");
+            int l = sc.nextInt();
+            int r = sc.nextInt();
+            int sum = pref[r] - pref[l-1];
+            System.out.println("Sum is :" + sum);
+        }
+
+
     }
 }
