@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = null;
+       // console.log(typeof(a));
+        const c = Math.random() * 100;
+        var ans = Math.floor(c);
+        
+        
+       // alert("Alert");
+        var n = window.prompt("Enter the number?");
+       // console.log(typeof(name));
+
+    do{
+       if (ans == n){
+        console.log(ans,"is the right answer");
+        break;
+       }if(n > ans)
+       {
+        console.log( n, "is too large");
+       }if(n < ans){
+        console.log(n, " is too small");
+       }
+       if(n <= 0){
+        console.log("correct no is", ans);
+        break;
+       }
+       var n = window.prompt("Enter the number?");
+    }while(n>=0);
+    </script>
+   
+</body>
+</html>
