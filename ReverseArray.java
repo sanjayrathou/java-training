@@ -1,31 +1,26 @@
-import java.util.*;
-public class ReverseArray{
+package Revision;
 
-    static int[] reverse(int[] arr){
-         int l=arr.length;
-        int[] ans=new int[l];
-        int j=0;
-       
-        for(int i=l-1;i>=0;i--){
-            ans[j++]=arr[i];
-            
+public class ReverseArray {
+
+    public void reverseArray(int[] arr){
+
+        int n = arr.length;
+        int j = n-1;
+        int i = 0;
+
+        while (i < n/2){
+            // swaping
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++; j--;
         }
-        return ans;
-    }
-    static void print(int[] arr){
-        for(int i=0;i<arr.length;i++){
-            System.out.print(arr[i]+" ");
+        for(int x : arr){
+            System.out.print(x + " ");
         }
-        System.out.println();
-
     }
-    public static void main(String[] args){
-        int[] arr={2,4,5,7,6,8,6,98};
-        int[] ans=reverse(arr);
-        print(ans);
-        
 
-
+    public static void main(String[] args) {
+        new ReverseArray().reverseArray(new int[]{2,3,4,5,6,7,8,9,10,11});
     }
-    
 }
