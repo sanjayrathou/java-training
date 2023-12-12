@@ -1,0 +1,23 @@
+package Revision;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+      //  Test.print(8);
+     //   Child.print(8);
+
+    }
+     void print(int a){
+        System.out.println(9);
+    }
+
+}
+class Child extends Test{
+
+     void print(int a){
+
+        System.out.println(8);
+    }
+
+}
