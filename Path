@@ -1,0 +1,18 @@
+class Solution {
+    public boolean isPathCrossing(String path) {
+        int x = 0, y = 0;
+        Set<String> set = new HashSet<>();
+        set.add("0,0");
+        for(char direction : path.toCharArray()){
+            if(direction == 'E') x++;
+            else if(direction == 'S') y--;
+            else if(direction == 'W') x--;
+            else if(direction == 'N') y++;
+
+            String currentPos = x + "," + y;
+            if(set.contains(currentPos)) return true;
+            set.add(currentPos);
+        }
+        return false;
+    }
+}
