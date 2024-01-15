@@ -1,0 +1,35 @@
+class Solution {
+    public List<List<Integer>> findWinners(int[][] matches) {
+        List<List<Integer>> results = new ArrayList<>();
+
+        Set<Integer> winners = new HashSet<>();
+        Set<Integer> losers = new HashSet<>();
+        Set<Integer> repeated = new HashSet<>();
+
+        for (int i = 0; i < matches.length; i++) {
+            if (!repeated.contains(matches[i][1])) {
+                losers.add(matches[i][1]);
+                repeated.add(matches[i][1]);
+            } else {
+                losers.remove(matches[i][1]);
+            }
+        }
+
+        for (int i = 0; i < matches.length; i++) {
+            if (!repeated.contains(matches[i][0])) {
+                winners.add(matches[i][0]);
+            }
+        }
+
+        List<Integer> list1 = new ArrayList<>(losers);
+        List<Integer> list2 = new ArrayList<>(winners);
+
+        Collections.sort(list1);
+        Collections.sort(list2);
+
+        results.add(list2);
+        results.add(list1);
+
+        return results;
+    }
+}
