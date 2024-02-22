@@ -1,0 +1,15 @@
+class Solution {
+    public int findJudge(int n, int[][] trust) {
+      //  Map <Integer,Tnteger> map = new HashMap<>();
+      int[] key = new int[n+1];
+      int[] value = new int[n+1];
+        for(int[] arr : trust){
+           key[arr[0]]++ ;
+           value[arr[1]]++;
+        }
+        for(int i = 1; i<= n; i++){
+            if((value[i] == n-1) && key[i] == 0) return i;
+        }
+        return -1;
+    }
+}
