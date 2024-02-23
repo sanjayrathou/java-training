@@ -1,0 +1,29 @@
+class Solution {
+    public String toGoatLatin(String sentence) {
+        StringBuilder sb = new StringBuilder();
+        String[] arr = sentence.split(" ");
+        for(int i = 0; i < arr.length; i++){
+            if((arr[i].startsWith(String.valueOf('a'))) || 
+    (arr[i].startsWith(String.valueOf('A'))) || 
+    (arr[i].startsWith(String.valueOf('e'))) || 
+    (arr[i].startsWith(String.valueOf('E')))  || 
+    (arr[i].startsWith(String.valueOf('o')))  || 
+    (arr[i].startsWith(String.valueOf('I')))  || 
+    (arr[i].startsWith(String.valueOf('i')))  || 
+    (arr[i].startsWith(String.valueOf('O')))  || 
+    (arr[i].startsWith(String.valueOf('u')))  || 
+    (arr[i].startsWith(String.valueOf('U')))) {
+                sb.append(arr[i]).append("ma");
+            }
+            else {
+                sb.append(arr[i].substring(1)).append(arr[i].substring(0,1)).append("ma");
+            }
+            for(int j = 0; j <= i; j++){
+                sb.append("a");
+            }
+            sb.append(" ");
+        }
+        return sb.toString().trim();
+
+    }
+}
