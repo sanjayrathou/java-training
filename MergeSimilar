@@ -1,0 +1,46 @@
+import java.util.*;
+
+class Solution {
+    public List<List<Integer>> mergeSimilarItems(int[][] items1, int[][] items2) {
+        List<List<Integer>> list1 = new ArrayList<>();
+        Map<Integer,Integer> map1 = new HashMap<>();
+        Map<Integer,Integer> map2 = new HashMap<>();
+        
+        // Populate map1
+        for(int[] arr : items1){
+            map1.put(arr[0], arr[1]);
+        }
+        
+        // Populate map2
+        for(int[] arr : items2){
+            map2.put(arr[0], arr[1]);
+        }
+        
+        // Merge values for common keys
+        for(int key : map1.keySet()){
+            if(map2.containsKey(key)){
+                map1.put(key, map1.get(key) + map2.get(key));
+            }
+        }
+        
+        // Add values from map2 to map1 for keys not present in map1
+        for(int key : map2.keySet()){
+            if(!map1.containsKey(key)){
+                map1.put(key, map2.get(key));
+            }
+        }
+        
+        // Convert map1 to list1
+        for(Map.Entry<Integer,Integer> entry : map1.entrySet()){
+            List<Integer> list = new ArrayList<>();
+            list.add(entry.getKey());
+            list.add(entry.getValue());
+            list1.add(list);
+        }
+        
+        // Sort list1 based on the first element of each list
+        Collections.sort(list1, Comparator.comparing(list -> list.get(0)));
+        
+        return list1; 
+    }
+}
