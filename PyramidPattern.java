@@ -1,4 +1,5 @@
 import java.util.*;
+// dummy
 public class PyramidPattern {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
