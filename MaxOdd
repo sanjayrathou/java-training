@@ -1,0 +1,13 @@
+class Solution {
+    public String maximumOddBinaryNumber(String s) {
+        int count = 0;
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < s.length(); i++){
+            if(s.charAt(i) == '1') count++;
+        }
+        sb.append(String.valueOf(1).repeat(count-1));
+        sb.append(String.valueOf(0).repeat(s.length()-count));
+        sb.append(String.valueOf(1));
+         return sb.toString();
+    }
+}
