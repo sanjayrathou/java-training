@@ -5,7 +5,7 @@ public class Student {
     private int rno;
     double percent;
 
-    final String schoolName = "dps";             //  final KEYWORD ITS VALUE NEVER CHANGES.
+    final String schoolName = "dps";//  final KEYWORD ITS VALUE NEVER CHANGES.
 
     public int getRno(){                // getter
         return rno;
