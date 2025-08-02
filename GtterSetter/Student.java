@@ -3,7 +3,7 @@ package GtterSetter;
 public class Student {
     public String name;
     private int rno;
-    double percent;
+    double percent; 
 
     final String schoolName = "dps";//  final KEYWORD ITS VALUE NEVER CHANGES.
 
@@ -16,4 +16,5 @@ public class Student {
     }
 
 }
+
 
