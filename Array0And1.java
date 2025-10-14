@@ -7,7 +7,7 @@ public class Array0And1 {
         for(int i=0;i<arr.length;i++){
             if(arr[i]==0){
                 count++;
-            }
+            } 
         }
         for(int i=0;i<arr.length;i++) {
             if ( i < count ) {
@@ -53,4 +53,5 @@ public class Array0And1 {
         }
     }
 }
+
 
