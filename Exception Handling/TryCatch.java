@@ -6,7 +6,7 @@ public class TryCatch {
         try {
             int a = 10,  b = 0, c;
             System.out.println("1");
-            c = a/b;
+            c = a/b; 
             System.out.println("2");
         }
         catch (ArithmeticException e){
@@ -24,3 +24,4 @@ public class TryCatch {
         }
     }
 }
+
