@@ -4,7 +4,7 @@ import OOPS.ProtectedAcess;
 
 public class StudentClass {
     public static void main(String[] args) {
-        Student s = new Student();
+        Student s = new Student(); 
         s.name = "raghav";
         s.percent = 92.7;
   //      s.rno = 9;            IT CAN'T BE ACCESSED BCOZ IT IS PRIVATE VARIABLE.
@@ -19,3 +19,4 @@ public class StudentClass {
 
     }
 }
+
